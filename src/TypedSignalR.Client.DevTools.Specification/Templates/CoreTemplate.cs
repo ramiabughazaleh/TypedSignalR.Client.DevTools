@@ -29,7 +29,7 @@ internal static partial class EndpointRouteBuilderExtensions
             context.Response.StatusCode = StatusCodes.Status200OK;
             context.Response.ContentType = ""application/json"";
 
-            ReadOnlyMemory<byte> jsonBytes = GetSpecJsonBytes();
+            var jsonBytes = GetSpecJsonBytes();
             await context.Response.Body.WriteAsync(jsonBytes);
         });
     }
